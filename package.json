@@ -1,0 +1,55 @@
+{
+  "name": "react-alicante-tanstack-ai-live-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "npm run exercise -- 01",
+    "exercise": "node scripts/run.mjs exercises",
+    "solution": "node scripts/run.mjs solutions",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "preflight": "tsx scripts/preflight.ts",
+    "test:live": "tsx scripts/live.ts",
+    "mock-api": "tsx core-app/mocks/provider.ts",
+    "prepare:retrieval": "tsx scripts/prepare-retrieval.ts",
+    "check:checkpoints": "tsx scripts/check-checkpoints.ts",
+    "test:retrieval": "tsx scripts/test-retrieval.ts",
+    "test:live:curriculum": "tsx scripts/live-curriculum.ts",
+    "test:checkpoints:browser": "playwright test --config playwright.checkpoints.config.ts",
+    "test:native:webmcp": "playwright test --config playwright.native.config.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "1.19.17",
+    "@huggingface/transformers": "4.3.0",
+    "@tanstack/ai": "0.58.0",
+    "@tanstack/ai-client": "0.33.2",
+    "@tanstack/ai-openai": "0.23.1",
+    "@tanstack/ai-react": "0.27.3",
+    "@tanstack/devtools-event-bus": "0.4.3",
+    "@tanstack/react-ai-devtools": "0.2.71",
+    "@tanstack/react-devtools": "0.10.12",
+    "hono": "4.13.8",
+    "openai": "6.49.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "@types/node": "24.12.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.4",
+    "prettier": "3.6.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "7.3.6"
+  }
+}

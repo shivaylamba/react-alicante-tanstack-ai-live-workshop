@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+:root {
+  font-family: 'Source Sans 3', sans-serif;
+  color: oklch(24% 0.025 40);
+  background: oklch(98% 0.008 65);
+  font-synthesis: none;
+  --ink: oklch(24% 0.025 40);
+  --accent: oklch(49% 0.15 32);
+  --line: oklch(87% 0.012 65);
+  --paper: oklch(96% 0.012 65);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+button,
+select,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button,
+select,
+input {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 5px;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  background: var(--paper);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.primary {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.primary:hover {
+  background: var(--accent);
+}
+.announcement {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 4%;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  display: flex;
+  justify-content: space-between;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 25px 4%;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -1px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.brand span {
+  color: var(--accent);
+}
+nav {
+  display: flex;
+  gap: 24px;
+  margin-right: auto;
+}
+nav a {
+  font-size: 14px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--accent);
+}
+h1,
+h2,
+h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+h1 {
+  font-size: clamp(40px, 5.2vw, 76px);
+  line-height: 1;
+  letter-spacing: -3px;
+  font-weight: 700;
+  margin: 18px 0 22px;
+}
+h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+h2 {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+h3 {
+  font-size: 17px;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 600;
+}
+p {
+  line-height: 1.55;
+  max-width: 65ch;
+}
+.store-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 370px;
+  gap: 40px;
+  max-width: 1540px;
+  margin: auto;
+  padding: 36px 4% 64px;
+}
+.store-layout.wide {
+  display: block;
+  max-width: 1200px;
+}
+.intro {
+  padding: 12px 0 32px;
+}
+.intro p {
+  color: oklch(48% 0.025 40);
+  font-size: 17px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  border-block: 1px solid var(--line);
+  padding: 18px 0;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.filter-bar label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+}
+.filter-bar input {
+  width: 100px;
+}
+.filter-bar select {
+  text-transform: capitalize;
+  min-width: 110px;
+}
+.result-count {
+  font-size: 12px;
+  color: oklch(48% 0.025 40);
+  margin: 20px 0;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 20px;
+}
+.product-card a {
+  text-decoration: none;
+}
+.product-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--paper);
+  position: relative;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.product-card a:hover img {
+  transform: scale(1.025);
+}
+.product-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 8px;
+  margin-top: 13px;
+}
+.product-caption strong {
+  font-size: 14px;
+  white-space: nowrap;
+}
+.product-card p {
+  font-size: 12px;
+  color: oklch(48% 0.025 40);
+  margin: 7px 0;
+}
+.sold-out {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: var(--paper);
+  padding: 5px;
+  font-size: 11px;
+}
+.chat-panel {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  border: 1px solid var(--line);
+  padding: 22px;
+  background: oklch(99% 0.005 65);
+}
+.chat-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.chat-heading h2 {
+  margin: 0;
+}
+.mode {
+  font-size: 9px;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.caption {
+  font-size: 12px;
+  color: oklch(48% 0.025 40);
+}
+.messages {
+  max-height: 430px;
+  min-height: 200px;
+  overflow: auto;
+}
+.empty {
+  font-family: 'Bricolage Grotesque';
+  font-size: 22px;
+  line-height: 1.4;
+  color: oklch(51% 0.035 40);
+  padding-block: 24px;
+}
+.message {
+  padding-block: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.message > strong {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.message p {
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.message details {
+  font-size: 11px;
+  margin-block: 8px;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+summary {
+  cursor: pointer;
+}
+.composer {
+  display: grid;
+  gap: 10px;
+  padding-top: 16px;
+}
+label {
+  font-size: 13px;
+}
+textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 85px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.approval {
+  background: oklch(94% 0.04 65);
+  padding: 16px;
+  margin-block: 12px;
+}
+.approval p {
+  font-size: 13px;
+}
+.approval button {
+  margin-right: 8px;
+}
+.error {
+  color: oklch(42% 0.15 30);
+  background: oklch(95% 0.035 30);
+  padding: 12px;
+}
+.faults {
+  display: block;
+  margin-top: 16px;
+}
+.faults select {
+  width: 100%;
+  font-size: 12px;
+}
+.chat-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 8px 0;
+}
+.compact h3 {
+  font-size: 12px;
+}
+.compact .product-caption {
+  display: block;
+}
+.compact p {
+  font-size: 10px;
+}
+.sources {
+  font-size: 12px;
+}
+.sources a {
+  display: block;
+  margin-block: 6px;
+}
+.policy {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.product-detail .detail-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  background: var(--paper);
+  margin-block: 24px;
+}
+.product-detail h1 {
+  font-size: 42px;
+}
+.price {
+  font-size: 24px;
+}
+.variant-controls {
+  display: flex;
+  gap: 16px;
+  margin-block: 22px;
+}
+.variant-controls label {
+  display: grid;
+  gap: 8px;
+}
+.cart-line {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cart-line img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.cart-line > div {
+  flex: 1;
+}
+.cart-line p {
+  font-size: 13px;
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin-top: 25px;
+}
+.activity {
+  font-size: 12px;
+  color: var(--accent);
+  margin-top: 30px;
+}
+.workshop-lab {
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+  font-size: 12px;
+}
+.webmcp button {
+  margin: 4px;
+  font-size: 12px;
+}
+footer {
+  padding: 32px 4%;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+footer span {
+  margin-left: auto;
+  font-size: 12px;
+}
+footer p {
+  font-size: 14px;
+}
+@media (min-width: 1600px) {
+  .store-layout {
+    grid-template-columns: minmax(0, 1fr) 420px;
+  }
+}
+@media (max-width: 1100px) {
+  .store-layout {
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) 330px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-header {
+    gap: 18px;
+  }
+  nav {
+    gap: 12px;
+  }
+}
+@media (max-width: 780px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .site-header nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .site-header > button {
+    margin-left: auto;
+    font-size: 12px;
+  }
+  .store-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+  .chat-panel {
+    position: static;
+    order: -1;
+    width: 100%;
+  }
+  .messages {
+    min-height: 80px;
+    max-height: 260px;
+  }
+  .empty {
+    padding: 0;
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .announcement span {
+    display: none;
+  }
+  .product-grid {
+    gap: 24px 14px;
+  }
+  .product-caption {
+    display: block;
+  }
+  footer {
+    display: block;
+  }
+  footer span {
+    display: block;
+  }
+  .cart-line {
+    gap: 10px;
+  }
+  .cart-line img {
+    width: 55px;
+    height: 55px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.pending-queue,
+.run-trace,
+.comparison-panel {
+  border-top: 1px solid var(--line, #ddd4cd);
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+.pending-queue > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.pending-queue button {
+  flex-shrink: 0;
+}
+.run-trace {
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+.comparison-panel summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+.comparison-panel textarea {
+  width: 100%;
+  min-height: 5rem;
+  margin: 0.5rem 0;
+}
+.comparison-panel label {
+  display: block;
+  margin-top: 1rem;
+}
+.comparison-result {
+  border-bottom: 1px solid #ddd4cd;
+  padding: 1rem 0;
+}
+.comparison-result h3 {
+  font-size: 1.1rem;
+}
