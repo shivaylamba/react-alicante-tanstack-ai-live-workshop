@@ -52,25 +52,25 @@ npm run solution -- 02
 
 ## Four-hour schedule
 
-| Clock | Minutes | Segment | Teach / build / experiment / explain |
-|---|---:|---|---|
-| 00:00–00:10 | 10 | Opening demo and boundaries | — |
-| 00:10–00:20 | 10 | [01 · Server + Nebius](exercises/01-server/README.md) | 3 / 3 / 3 / 1 |
-| 00:20–00:40 | 20 | [02 · Streaming, queues and events](exercises/02-streaming/README.md) | 5 / 8 / 6 / 1 |
-| 00:40–01:00 | 20 | [03 · Typed catalog tools](exercises/03-catalog-tools/README.md) | 5 / 8 / 6 / 1 |
-| 01:00–01:10 | 10 | [04 · Grounded product cards](exercises/04-product-ui/README.md) | 3 / 3 / 3 / 1 |
-| 01:10–01:30 | 20 | [05 · Structured shopping comparisons](exercises/05-structured-comparison/README.md) | 5 / 8 / 6 / 1 |
-| 01:30–01:45 | 15 | [06 · Grounded policy retrieval](exercises/06-retrieval/README.md) | 4 / 6 / 4 / 1 |
-| 01:45–01:55 | 10 | Break | — |
-| 01:55–02:20 | 25 | [07 · Human-approved cart changes](exercises/07-cart-approval/README.md) | 5 / 13 / 6 / 1 |
-| 02:20–02:35 | 15 | [08 · Bounded multi-step shopping](exercises/08-shopping-agent/README.md) | 4 / 6 / 4 / 1 |
-| 02:35–02:50 | 15 | [09 · Middleware, caching and budgets](exercises/09-middleware/README.md) | 4 / 6 / 4 / 1 |
-| 02:50–03:05 | 15 | [10 · DevTools and failure recovery](exercises/10-debugging/README.md) | 4 / 6 / 4 / 1 |
-| 03:05–03:20 | 15 | [11 · Expose a native browser tool](exercises/11-webmcp/README.md) | 4 / 6 / 4 / 1 |
-| 03:20–03:40 | 20 | [12 · Independent Nebius browser agent](exercises/12-external-agent/README.md) | 5 / 8 / 6 / 1 |
-| 03:40–03:50 | 10 | Capstone | — |
-| 03:50–04:00 | 10 | Questions / recovery buffer | — |
-| **Total** | **240** | **200 minutes of exercises** | **51 teach / 81 build / 56 experiment / 12 explain** |
+| Clock | Minutes | Segment |
+|---|---:|---|
+| 00:00–00:10 | 10 | Opening demo and boundaries |
+| 00:10–00:20 | 10 | [01 · Server + Nebius](exercises/01-server/README.md) |
+| 00:20–00:40 | 20 | [02 · Streaming, queues and events](exercises/02-streaming/README.md) |
+| 00:40–01:00 | 20 | [03 · Typed catalog tools](exercises/03-catalog-tools/README.md) |
+| 01:00–01:10 | 10 | [04 · Grounded product cards](exercises/04-product-ui/README.md) |
+| 01:10–01:30 | 20 | [05 · Structured shopping comparisons](exercises/05-structured-comparison/README.md) |
+| 01:30–01:45 | 15 | [06 · Grounded policy retrieval](exercises/06-retrieval/README.md) |
+| 01:45–01:55 | 10 | Break |
+| 01:55–02:20 | 25 | [07 · Human-approved cart changes](exercises/07-cart-approval/README.md) |
+| 02:20–02:35 | 15 | [08 · Bounded multi-step shopping](exercises/08-shopping-agent/README.md) |
+| 02:35–02:50 | 15 | [09 · Middleware, caching and budgets](exercises/09-middleware/README.md) |
+| 02:50–03:05 | 15 | [10 · DevTools and failure recovery](exercises/10-debugging/README.md) |
+| 03:05–03:20 | 15 | [11 · Expose a native browser tool](exercises/11-webmcp/README.md) |
+| 03:20–03:40 | 20 | [12 · Independent Nebius browser agent](exercises/12-external-agent/README.md) |
+| 03:40–03:50 | 10 | Capstone |
+| 03:50–04:00 | 10 | Questions / recovery buffer |
+| **Total** | **240** | **200 minutes of exercises** |
 
 
 ## Resources
@@ -99,7 +99,3 @@ tests/        application and checkpoint tests
 `npm run check` runs TypeScript checks, application tests and the final client build. `npm run check:checkpoints` builds every starter and solution. Browser tests are optional: install Chromium with `npx playwright install chromium`, then run `npm run test:e2e`. Live-model checks consume provider tokens.
 
 This is a local learning application. The bag is stored in your browser and checkout is a preview, not a real purchase. WebMCP requires compatible Chrome support; its local handler fallback is not the same as native browser integration.
-
-## Credits
-
-The product collection builds on [React Alicante Agent Workshop](https://github.com/shivaycb/reactalicante-agent-workshop). The checkpoint format is inspired by [Faris Aziz's workshop](https://github.com/farisaziz12/nextjs-architecture-workshop). See [attribution](ATTRIBUTION.md) and the included licenses.
