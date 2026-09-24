@@ -37,6 +37,12 @@ Replace the empty policy result with retrievePolicies(input.query). Trace the he
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `06A` is the first edit in this exercise.
+
+1. **`06A` — `tools.ts`:** Replace the policyDef.server callback returning an empty sources array with async (input) => retrievePolicies(input.query). The full definition becomes export const policy = policyDef.server(async (input) => retrievePolicies(input.query));. Keep policy in the tools array. The retrieval helper and its mode selection already exist.
+
 ## Experiment
 
 Ask What is the return policy? Open the returned source link and compare it with the answer. Try a paraphrase. Then ask an unsupported policy question and inspect whether any relevant evidence exists; live wording is not deterministic.

@@ -37,6 +37,14 @@ In tools.ts return searchProducts(input).slice(0, 6) from search. Pass input.pro
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `03A` is the first edit in this exercise.
+
+1. **`03A` — `tools.ts`:** Inside searchDef.server, replace products: [] with products: searchProducts(input).slice(0, 6). Pass the validated input to the catalog helper and return at most six matching products.
+
+2. **`03B` — `tools.ts`:** Inside detailDef.server, replace getProduct('TODO-product-id') with getProduct(input.productId). The tool must look up the ID requested by the model. Keep the existing tools array containing search and details.
+
 ## Experiment
 
 Ask Find red T-shirts under €30. Expand Tool: search_products and compare input and output with the catalog. Ask for details of Fire T-Shirt. Try an impossible search and verify no invented catalog item is rendered. With a live model, request an unsupported policy and discuss why it cannot retrieve that yet.

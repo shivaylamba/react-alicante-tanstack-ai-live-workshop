@@ -4,7 +4,7 @@ import { browserTools } from '../../core-app/webmcp-tools';
 import { filterProducts } from '../../core-app/browser-state';
 const options = { onError: (error: unknown) => console.error('WebMCP registration:', error) };
 export function WebMCP() {
-  // TODO 11: register browserTools with useWebMCPTools. React handles cleanup. Never register cartDef here.
+  // TODO 11A: register browserTools with useWebMCPTools. React handles cleanup. Never register cartDef here.
   const [result, setResult] = useState('');
   return (
     <section className="webmcp">

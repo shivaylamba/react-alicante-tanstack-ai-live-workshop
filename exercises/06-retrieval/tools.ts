@@ -9,6 +9,6 @@ export const policy = policyDef.server(
   async (input) => ({
     mode: 'lexical' as const,
     sources: [],
-  }) /* TODO 06: retrieve policies for this query */,
+  }) /* TODO 06A: retrieve policies for this query */,
 );
 export const tools = [search, details, policy];

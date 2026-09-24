@@ -38,6 +38,14 @@ Connect the two button callbacks to item.resolveInterrupt(true) and item.resolve
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `07A` is the first edit in this exercise.
+
+1. **`07A` — `Chat.tsx`:** Find the Approve button. Replace its no-op onClick with onClick={() => item.resolveInterrupt(true)}. This resolves this pending approval, allowing the supplied tool implementation to run.
+
+2. **`07B` — `Chat.tsx`:** Find the Deny button. Replace its no-op onClick with onClick={() => item.resolveInterrupt(false)}. Keep both disabled guards and the existing cart tool registration. Do not add an independent add-to-cart call to either button; the tool lifecycle owns execution.
+
 ## Experiment
 
 Ask Add one Fire T-Shirt, red, size M to my bag. Check the card and bag count before clicking. Deny: count stays unchanged. Make a fresh proposal and Approve: count increases by one. Attempt to type yes approve while a card is pending; it must not bypass the card. Check the actual bag after every action.

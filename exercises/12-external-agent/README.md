@@ -37,6 +37,14 @@ Replace both throws: return context.getTools() from discover; return context.exe
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `12A` is the first edit in this exercise.
+
+1. **`12A` — `agent.ts`:** Inside discover(context), replace the placeholder throw with return context.getTools();. This asks the actual browser registry which tools are available.
+
+2. **`12B` — `agent.ts`:** Inside execute(context, tool, args), replace the placeholder throw with return context.executeTool(tool, JSON.stringify(args));. The native API expects serialized arguments in this workshop integration. Keep the surrounding agent runner, tool validation and limits; do not hard-code a successful tool result.
+
 ## Experiment
 
 In prepared native Chrome open /agent.html in live mode. Ask Find a red medium T-shirt under €30, check its return policy, and show the best match. Leave my bag unchanged. Inspect the discovered registry, model-selected names/arguments, native results, final product view and unchanged bag. Repeat with an impossible constraint and verify the runner does not invent success.

@@ -37,6 +37,14 @@ Replace DebugPanel.tsx with the small complete component shown below, including 
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `10A` is the first edit in this exercise.
+
+1. **`10A` — `DebugPanel.tsx`:** Add imports for TanStackDevtools from '@tanstack/react-devtools' and aiDevtoolsPlugin from '@tanstack/react-ai-devtools'. Above the component, define const plugins = [aiDevtoolsPlugin()]; so the plugin list is stable.
+
+2. **`10B` — `DebugPanel.tsx`:** Replace return null with return <TanStackDevtools plugins={plugins} eventBusConfig={{ connectToServerBus: true }} />;. This mounts the panel and connects it to the supplied server event bus. You do not need to rewrite the existing Run activity panel.
+
 ## Experiment
 
 With DevTools closed, send Find red T-shirts under €30 and wait for the response. Then open the floating Open TanStack Devtools control and select TanStack AI. Under CHAT choose the useChat entry containing the new run, then Conversation. Inspect search_products input and its output under USER VIEW; expand products. Compare with product cards and Run activity. STRUCTURED belongs to the separate comparison feature. If the docked panel covers the composer, close it before sending the next message, then reopen it to inspect.

@@ -39,6 +39,14 @@ Set toolNames to ['search_store_policies']. Attach workshopMiddleware to chat(),
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `09A` is the first edit in this exercise.
+
+1. **`09A` — `middleware.ts`:** Inside toolCacheMiddleware, change toolNames: [] to toolNames: ['search_store_policies']. Leave ttl: 60_000 and maxSize: 50 unchanged. Only the read-only policy tool should be cached.
+
+2. **`09B` — `server.ts`:** Inside chat(), add middleware: workshopMiddleware(process.env.WORKSHOP_MOCK === '1' && request.headers.get('x-workshop-fault') === 'tool-budget' ? 2 : 6), at the TODO. The supplied helper applies the budget before the cache. The controlled fixture fault gets two calls; other requests get six.
+
 ## Experiment
 
 Run in fixture mode. Select Repeated tools — test budget and ask Find products: inspect Tool 1/2, Tool 2/2 and budget reached. Select Repeated policy — test cache and ask What is the return policy?: inspect miss then hit. Cache lasts 60 seconds; refresh does not clear the server cache. Restore No fault. Optional: approve the Unknown product ID proposal and confirm validation rejects it without changing the bag.

@@ -42,6 +42,14 @@ In Chat.tsx change /api/TODO-connect-chat to /api/chat and whenBusy from drop to
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `02A` is the first edit in this exercise.
+
+1. **`02A` — `Chat.tsx`:** Inside useChat, find fetchServerSentEvents. Change only '/api/TODO-connect-chat' to '/api/chat'. Keep the headers callback; the new URL connects our UI to the actual server route.
+
+2. **`02B` — `Chat.tsx`:** In the queue configuration change whenBusy: 'drop' to whenBusy: 'queue'. Keep drain: 'fifo' and maxSize: 3. A message sent while a response is running will now wait rather than be dropped. The message rendering, Stop handler and queue controls are already supplied.
+
 ## Experiment
 
 Ask Explain T-shirt sizing in two sentences. In fixture mode select Slow stream — test Stop, send another message while output is arriving, inspect Waiting to send, cancel the queued message, then press Stop. Select No fault and send again. Try HTTP 429 and verify an error is visible before retrying with No fault.

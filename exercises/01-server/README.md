@@ -44,6 +44,14 @@ In server.ts, replace the empty messages array with params.messages. Replace the
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `01A` is the first edit in this exercise.
+
+1. **`01A` — `server.ts`:** Find messages: [] in chat(). Replace [] with params.messages so the model receives the validated incoming conversation.
+
+2. **`01B` — `server.ts`:** At the bottom of POST, replace the starter controller.abort(), removeEventListener call and 501 Response.json return with return toServerSentEventsResponse(withCleanup(), { abortController: controller });. Keep the existing withCleanup generator and its finally block: they clean up after streaming instead of cancelling before streaming starts.
+
 ## Experiment
 
 Run the endpoint probe below. Change only the content string to Explain streaming in one sentence and repeat. Then change messages to a string and repeat: the HTTP route should reject it. Restore the valid body. In fixture mode, changing words need not change the scripted answer.

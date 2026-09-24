@@ -37,6 +37,12 @@ Call useWebMCPTools(browserTools, options) at the top level of WebMCP. Inspect t
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `11A` is the first edit in this exercise.
+
+1. **`11A` — `WebMCP.tsx`:** Inside WebMCP(), replace the TODO with useWebMCPTools(browserTools, options);. Call the hook unconditionally before the existing state hook. The supplied tools and options describe the browser capabilities, and the hook manages registration and cleanup. Do not add cartDef to these externally exposed tools.
+
 ## Experiment
 
 Expand Workshop lab. Check the native availability message. Use Harness: filter red and Harness: invalid input to test the handlers. In supported Chrome inspect the registered names with the native consumer described in docs/EXTERNAL-AGENT.md. Continue to 12 for discovery plus actual native execution.

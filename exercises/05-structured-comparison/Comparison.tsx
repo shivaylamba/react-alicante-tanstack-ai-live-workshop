@@ -27,7 +27,7 @@ export function Comparison() {
               )}
             {message.parts.map((part, index) =>
               part.type === 'structured-output' && part.status === 'complete'
-                ? null /* TODO 05: render ComparisonResult with the completed part.data */
+                ? null /* TODO 05B: render ComparisonResult with the completed part.data */
                 : null,
             )}
           </div>

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     systemPrompts: [comparisonPrompt],
     tools: comparisonTools(evidence),
     middleware: [comparisonGrounding(evidence)],
-    // TODO 05: pass comparisonSchema as outputSchema.
+    // TODO 05A: pass comparisonSchema as outputSchema.
     stream: true,
     abortController: controller,
   });

@@ -3,9 +3,9 @@ import { toolCacheMiddleware } from '@tanstack/ai/middlewares';
 
 // One bounded cache per server module. Only public, read-only policy results are reusable.
 const policyCache = toolCacheMiddleware({
-  toolNames: [],
+  toolNames: [], // TODO 09A: cache only search_store_policies.
   ttl: 60_000,
-  maxSize: 50, // TODO 09: allow only search_store_policies.
+  maxSize: 50,
 });
 
 export function workshopMiddleware(limit = 6): ChatMiddleware[] {

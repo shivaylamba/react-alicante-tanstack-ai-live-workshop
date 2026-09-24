@@ -143,13 +143,13 @@ export function Chat() {
             })()}
             <button
               disabled={!item.canResolve || resuming}
-              onClick={() => undefined /* TODO 07: resolve this interrupt with approval */}
+              onClick={() => undefined /* TODO 07A: resolve this interrupt with approval */}
             >
               Approve
             </button>
             <button
               disabled={!item.canResolve || resuming}
-              onClick={() => undefined /* TODO 07: resolve this interrupt with denial */}
+              onClick={() => undefined /* TODO 07B: resolve this interrupt with denial */}
             >
               Deny
             </button>

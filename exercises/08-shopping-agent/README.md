@@ -37,6 +37,14 @@ Replace maxIterations(1) with maxIterations(8). Replace the TODO sentence in the
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `08A` is the first edit in this exercise.
+
+1. **`08A` — `server.ts`:** Find the systemPrompts entry and add this workflow instruction at its end: For multi-step requests, search, inspect the chosen variant, retrieve relevant policy, ask approval, then summarize actual results. Stop when the goal is met. At most two proposed additions per user turn. Preserve the existing product-fact and approval instructions. This describes behavior; it does not register tools or enforce a hard tool-call budget.
+
+2. **`08B` — `server.ts`:** Change agentLoopStrategy: maxIterations(1) to agentLoopStrategy: maxIterations(8). This permits a bounded multi-step conversation with tools. Eight is a model-iteration ceiling, not eight individual tool calls; the separate tool budget comes in Exercise 09.
+
 ## Experiment
 
 Ask Find a red medium T-shirt under €30, check its return policy, and ask me before adding one to my bag. Inspect calls, verify source and variant, then deny. Ask Filter the visible products to red and inspect the grid. Temporarily return the iteration cap to 1, repeat the multi-step task, observe reduced progress, then restore 8.

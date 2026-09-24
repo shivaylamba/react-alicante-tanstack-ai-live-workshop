@@ -38,6 +38,14 @@ Add outputSchema: comparisonSchema to the comparison chat configuration. In Comp
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `05A` is the first edit in this exercise.
+
+1. **`05A` — `compare-server.ts`:** Inside the comparison chat() options, add outputSchema: comparisonSchema at the TODO. Keep stream: true, the tools and grounding middleware. This supplies the required answer shape.
+
+2. **`05B` — `Comparison.tsx`:** Find the branch checking part.type === 'structured-output' and part.status === 'complete'. Replace its first null with <ComparisonResult key={index} value={part.data} />. Leave the fallback null for other parts. Only a completed result is rendered.
+
 ## Experiment
 
 Expand Compare products. Submit Compare available red T-shirts under €30. Then send Make the selection cheaper. Keep everything under €20. Finally try At most €20. Compare strict under with inclusive at most; an empty valid result is allowed. Check that the bag remains unchanged.

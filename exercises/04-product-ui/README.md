@@ -36,6 +36,12 @@ Replace the null Results component with the exact GroundedResults re-export in t
 
 Read the TODOs and the surrounding code. Try your implementation before opening the solution. You do not need to recreate the supplied infrastructure.
 
+## Code edits to make
+
+TODO labels use the exercise number plus an edit letter: `04A` is the first edit in this exercise.
+
+1. **`04A` — `Results.tsx`:** Replace the placeholder Results function that returns null with export { GroundedResults as Results } from '../../core-app/product-ui';. This connects the already supplied card renderer to the chat. Open that helper to trace how catalog IDs become cards; you are wiring the renderer, not writing the whole card layout.
+
 ## Experiment
 
 Ask Find red T-shirts under €30. Compare card prices and IDs with expanded tool output. Click a card to open its product page, then return. Inspect the supplied validation code and explain what happens to an unknown product ID.

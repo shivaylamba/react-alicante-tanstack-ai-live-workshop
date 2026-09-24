@@ -17,10 +17,11 @@ export function Chat() {
       .catch(() => setMode('Offline'));
   }, []);
   const { messages, sendMessage, isLoading, error, stop, queue, cancelQueued } = useChat({
+    // TODO 02A: connect to the /api/chat endpoint.
     connection: fetchServerSentEvents('/api/TODO-connect-chat', () => ({
       headers: { 'x-workshop-fault': faultRef.current },
     })),
-    queue: { whenBusy: 'drop', drain: 'fifo', maxSize: 3 }, // TODO 02: hold messages while busy
+    queue: { whenBusy: 'drop', drain: 'fifo', maxSize: 3 }, // TODO 02B: hold messages while busy
     onChunk(chunk) {
       if (chunk.type === 'RUN_STARTED') {
         setActivity('Working');
