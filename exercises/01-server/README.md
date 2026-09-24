@@ -26,6 +26,12 @@ The APIs and supplied helpers you will use:
 - toServerSentEventsResponse(stream, options) comes from @tanstack/ai and turns events into an HTTP Response.
 - guardChatStream is supplied infrastructure: it bounds the stream and handles disconnection. Attendees do not implement it. threadId identifies a conversation; runId identifies this request.
 
+### Where AG-UI fits
+
+AG-UI stands for Agent–User Interaction. It defines a shared event format between an AI backend and a user interface. Our frontend receives events such as RUN_STARTED, TEXT_MESSAGE_CONTENT and RUN_FINISHED rather than waiting for only a finished answer. TanStack AI produces and processes these events for us.
+
+In this workshop, Server-Sent Events, or SSE, carries those events over an HTTP response. SSE is the transport; AG-UI defines the event structure and meaning. chat() produces the stream, toServerSentEventsResponse() sends it over HTTP, and fetchServerSentEvents() connects that response to useChat(). React renders the resulting message state. The model provider runs inference; it is TanStack AI that connects that provider to this application protocol.
+
 ## Make a prediction
 
 Will curl receive one JSON object or several events? What observable header would distinguish them?

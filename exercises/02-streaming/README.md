@@ -26,6 +26,10 @@ The APIs and supplied helpers you will use:
 - message.parts contains typed pieces. At this checkpoint we render text parts only; tools have not been introduced.
 - onChunk observes protocol events for status labels. RUN_STARTED begins a run; TEXT_MESSAGE_CONTENT contains text; RUN_FINISHED ends it.
 
+### Where AG-UI fits
+
+The event names in onChunk are AG-UI events. RUN_STARTED means this run has begun, TEXT_MESSAGE_CONTENT carries another text delta, RUN_FINISHED marks successful completion, and RUN_ERROR reports failure. Our status labels translate those events into feedback. useChat() assembles the incoming events into messages and parts; a message part is client state, not the raw SSE frame. A delta is a text fragment, not necessarily one model token.
+
 ## Make a prediction
 
 If a second message arrives while the first is streaming, should it disappear, interrupt, or wait?

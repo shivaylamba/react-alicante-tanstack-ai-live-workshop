@@ -28,3 +28,7 @@ Chat messages are session state; only the local cart and applied cart request ID
 Policy retrieval defaults to labeled lexical matching. Optional prepared semantic mode embeds documents and queries with the same local model.
 
 External runner → embedded storefront's native registry → discovered schemas → server-side Nebius automatic selection → validated native executeTool → visible product grid → result returned to model. Only filtering is exposed. The independent runner imports no app tool handler and does not implement third-party or cross-origin interoperability.
+
+## Server–client protocol
+
+In this workshop, Server-Sent Events, or SSE, carries those events over an HTTP response. SSE is the transport; AG-UI defines the event structure and meaning. chat() produces the stream, toServerSentEventsResponse() sends it over HTTP, and fetchServerSentEvents() connects that response to useChat(). React renders the resulting message state. The model provider runs inference; it is TanStack AI that connects that provider to this application protocol. See [AG-UI concepts](CONCEPTS.md#ag-ui-the-event-protocol-behind-our-react-ui).
